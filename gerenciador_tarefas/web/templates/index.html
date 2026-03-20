@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Minhas Tarefas</h1>
+
+<form action="/adicionar" method="post">
+    <input type="text" name="titulo" placeholder="Título" required>
+    <input type="text" name="descricao" placeholder="Descrição">
+    <select name="prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+    </select>
+    <button type="submit">Adicionar</button>
+</form>
+
+<ul>
+    {% for tarefa in tarefas %}
+        <li>
+            {% if tarefa.concluida %}
+                ✔
+            {% else %}
+                <a href="/concluir/{{ tarefa.id }}">[Concluir]</a>
+            {% endif %}
+            {{ tarefa.titulo }} ({{ tarefa.prioridade }})
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
