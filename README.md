@@ -1,54 +1,76 @@
-# 🚀 Task Manager CLI
+# Task Manager CLI
 
-Um **Gerenciador de Tarefas em Linha de Comando (CLI)** desenvolvido em Python, com persistência de dados em JSON.
+Um gerenciador de tarefas em linha de comando, feito em Python, com armazenamento local em JSON.
 
-Projeto focado em boas práticas de organização de código, manipulação de arquivos e estruturação modular.
+O projeto foi pensado para ser simples de usar e facil de evoluir, mantendo o codigo organizado e a persistencia de dados entre execucoes.
 
----
+## Sobre o Projeto
 
-## 📌 Sobre o Projeto
+O `Task Manager CLI` permite:
 
-O **Task Manager CLI** permite que o usuário:
+- Adicionar novas tarefas
+- Listar todas as tarefas
+- Listar apenas tarefas pendentes
+- Listar apenas tarefas concluidas
+- Marcar uma tarefa como concluida
+- Reabrir uma tarefa concluida
+- Remover tarefas
+- Registrar automaticamente a data e hora de criacao
+- Salvar os dados em `tarefas.json`
 
-- ✅ Adicione tarefas  
-- 📄 Liste tarefas cadastradas  
-- ✔️ Marque tarefas como concluídas  
-- 💾 Armazene dados de forma persistente  
-- 🕒 Registre data e hora de criação automaticamente  
+Além disso, o programa trata cenarios basicos de erro, como arquivo JSON invalido, titulo vazio e IDs inexistentes.
 
-O sistema mantém os dados mesmo após o encerramento do programa, utilizando armazenamento local em JSON.
+## Tecnologias Utilizadas
 
----
-
-## 🛠 Tecnologias Utilizadas
-
-- **Python 3**
-- Biblioteca padrão:
+- Python 3
+- Biblioteca padrao:
   - `json`
   - `os`
   - `datetime`
 
----
+## Estrutura do Projeto
 
-## 📂 Estrutura do Projeto
-
-```
-task_manager/
-│
-├── task_manager.py
-└── tarefas.json (gerado automaticamente)
+```text
+ProjetoPY/
+|-- task_manager.py
+|-- README.md
+`-- tarefas.json
 ```
 
----
+O arquivo `tarefas.json` e criado automaticamente quando necessario.
 
-## ▶️ Como Executar
+## Como Executar
+
+No terminal, dentro da pasta do projeto:
 
 ```bash
 python task_manager.py
 ```
 
----
+## Menu Atual
 
-## 📄 Licença
+Ao iniciar o programa, o menu disponivel e:
 
-Distribuído sob a licença MIT.
+```text
+1 - Adicionar tarefa
+2 - Listar todas as tarefas
+3 - Listar tarefas pendentes
+4 - Listar tarefas concluidas
+5 - Concluir tarefa
+6 - Reabrir tarefa
+7 - Remover tarefa
+8 - Sair
+```
+
+## Exemplo de Uso
+
+Fluxo comum:
+
+1. Adicionar uma tarefa com titulo e descricao.
+2. Listar as tarefas pendentes.
+3. Concluir uma tarefa pelo ID.
+4. Reabrir ou remover uma tarefa quando necessario.
+
+## Licenca
+
+Distribuido sob a licenca MIT.
